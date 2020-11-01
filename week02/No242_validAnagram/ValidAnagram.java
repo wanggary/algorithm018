@@ -13,8 +13,10 @@ public class ValidAnagram {
      * 遍历字符串s中的字符，当前位的字符出现一次，arr中对应位置数值++
      * t中字符出现一次，arr中对应位置数值--
      * 如果最后arr中所有位都是0，则s和t中的字母相同
+     * 时间复杂度：O(n)
+     * 空间复杂度：O(1)
      */
-    public boolean validAnagram1(String s, String t) {
+    public static boolean isAnagram1(String s, String t) {
         if (s.length() != t.length()) {
             return false;
         }
@@ -37,7 +39,7 @@ public class ValidAnagram {
     /**
      * 可先将s中出现的字母统计好
      */
-    public boolean validAnagram2(String s, String t) {
+    public static boolean isAnagram2(String s, String t) {
         if (s.length() != t.length()) {
             return false;
         }
@@ -61,8 +63,10 @@ public class ValidAnagram {
 
     /**
      * 通过对字符串中字符排序判断字符串是否相等
+     * 时间复杂度：O(nlogn), 主体为排序的复杂度O(nlogn)
+     * 空间复杂度：O(1)
      */
-    public boolean validAnagram3(String s, String t) {
+    public static boolean isAnagram3(String s, String t) {
         if (s.length() != t.length()) {
             return false;
         }
@@ -73,5 +77,13 @@ public class ValidAnagram {
         Arrays.sort(charst);
 
         return Arrays.equals(charss, charst);
+    }
+
+    public static void main(String[] args) {
+        String a = "a";
+        String b = "b";
+
+        System.out.println(isAnagram1(a, b));
+        System.out.println(isAnagram2(a, b));
     }
 }

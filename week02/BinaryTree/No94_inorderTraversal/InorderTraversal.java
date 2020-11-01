@@ -7,6 +7,8 @@ import java.util.List;
 
 /**
  * 二叉树中序遍历
+ * 时间复杂度：O(n), n为节点个数
+ * 空间复杂度：平均情况为O(logn), 最坏情况为O(n), 即树为为单链表形式
  */
 public class InorderTraversal {
 
